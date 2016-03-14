@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title> {{title}} </title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		    <ul>
+		    {% for message in messages %}
+			<li>{{ message }} </li>
+		    {% endfor %}
+		{% endif %}
+		{% endwith %}
+		<form action="/sent" method="post" name="msg">
+		<p>
+			Enter your message <br>
+		</p>
+		<p>
+			<input name="message" type="text">
+		</p>
+		<p>
+			<input  type = "submit" value="Send">
+		</p>
+		</form>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		    <ul>
+		    {% for message in messages %}
+			<li>{{ message }} </li>
+		    {% endfor %}
+		{% endif %}
+		{% endwith %}
+		
+	</body>
+</html>
